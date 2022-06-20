@@ -41,9 +41,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -112,6 +112,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(222, 145);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(411, 452);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
@@ -125,14 +126,15 @@
             this.pictureBox2.Location = new System.Drawing.Point(668, 145);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(411, 452);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(222, 106);
+            this.button3.Location = new System.Drawing.Point(44, 237);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(173, 23);
+            this.button3.Size = new System.Drawing.Size(126, 23);
             this.button3.TabIndex = 11;
             this.button3.Text = "TONO RED";
             this.button3.UseVisualStyleBackColor = true;
@@ -140,9 +142,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(668, 106);
+            this.button4.Location = new System.Drawing.Point(44, 287);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 23);
+            this.button4.Size = new System.Drawing.Size(126, 23);
             this.button4.TabIndex = 12;
             this.button4.Text = "TONO GREEN";
             this.button4.UseVisualStyleBackColor = true;
@@ -151,46 +153,45 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(44, 171);
+            this.button5.Location = new System.Drawing.Point(44, 347);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 59);
             this.button5.TabIndex = 13;
-            this.button5.Text = "CAMBIO TEXTURA 1";
+            this.button5.Text = "CAMBIO TEXTURA ";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(44, 271);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 59);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "CAMBIO TEXTURA 2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(44, 368);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 59);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "CAMBIO TEXTURA 3";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label4.Location = new System.Drawing.Point(512, 40);
+            this.label4.Location = new System.Drawing.Point(449, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 39);
+            this.label4.Size = new System.Drawing.Size(410, 38);
             this.label4.TabIndex = 16;
-            this.label4.Text = "IMAGENES";
+            this.label4.Text = "MANEJO DE IMAGENES";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(44, 145);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 56);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "VER BORDES";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(481, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(346, 29);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "CONTORNO DE IMAGENES";
             // 
             // Form1
             // 
@@ -198,9 +199,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1103, 674);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -238,9 +239,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -17,11 +17,17 @@ namespace WindowsFormsApplication2
     public partial class Form1 : Form
     {
         Bitmap bmp;
+        Bitmap resultante;
+        int[,] conv3x3 = new int[3, 3];
+
+        int anchov, altov;
+
         int pR, pG, pB;
         int[] texturas = new int[9];
         public Form1()
         {
             InitializeComponent();
+            resultante = new Bitmap(800, 600);
         }
 
         
@@ -32,6 +38,12 @@ namespace WindowsFormsApplication2
             openFileDialog1.ShowDialog();
             bmp = new Bitmap(openFileDialog1.FileName);
             pictureBox1.Image = bmp;
+
+            anchov = bmp.Width;
+            altov = bmp.Height;
+
+            //resultante = bmp;
+            //pictureBox2.Image = resultante;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -196,6 +208,80 @@ namespace WindowsFormsApplication2
                     }
                 }
             pictureBox2.Image = bmpR;
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+           Bitmap imgg = new Bitmap(bmp.Width, bmp.Height);
+           // resultante = new Bitmap(bmp.Width, bmp.Height);
+            Color rc = new Color();
+            Color oc = new Color();
+            float g = 0;
+            for (int i = 0; i < bmp.Width; i++)
+            {
+                for (int j = 0; j < bmp.Height; j++)
+                {
+                    oc = bmp.GetPixel(i, j);
+                    g = oc.R * 0.299f + oc.G * 0.587f + oc.B * 0.114f;
+
+                    rc = Color.FromArgb((int)g, (int)g, (int)g);
+                    imgg.SetPixel(i, j, rc);
+                }
+
+            }
+
+            resultante = new Bitmap(bmp.Width, bmp.Height);
+            //matriz 3x3 para bordes
+            conv3x3 = new int[,] { { -1, 0, -1 }, { 0, 4, 0 }, { -1, 0, -1 } };
+            Bitmap intermedio = (Bitmap)imgg.Clone();
+
+
+            ConvGris(conv3x3, intermedio, 32, 64);
+
+
+            this.Invalidate();
+
+            //pictureBox2.Image = imgg;
+
+        }
+        private void ConvGris(int[,] pmatriz, Bitmap pImg, int pinf, int psup)
+        {
+
+            //pictureBox2.Image = pImg;
+            int x = 0;
+            int y = 0;
+            int a = 0;
+            int b = 0;
+            Color oco;
+
+           
+
+            int suma = 0;
+            for (x = 1; x < pImg.Width - 1; x++)
+            {
+                for (y = 1; y< pImg.Height - 1; y++)
+                {
+                    suma = 0;
+                    for (a = -1; a < 2; a++)
+                    {
+                        for (b = -1; b < 2; b++)
+                        {
+                            oco = pImg.GetPixel(x + a, y + b);
+                            suma = suma + (oco.R * pmatriz[a + 1, b + 1]);
+                        }
+                    }
+                    if (suma < pinf)
+                        suma = 0;
+                    else if (suma > psup)
+                    { suma = 255; }
+
+                    resultante.SetPixel(x, y, Color.FromArgb(suma, suma, suma));
+
+                }
+
+            }
+            pictureBox2.Image = resultante;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
